@@ -1,5 +1,5 @@
 { config, ... }:
 
 {
-  imports = [ ./adwaita.nix ./swaylock.nix ];
+  imports = [ ./adwaita.nix ./rofi.nix ./swaylock.nix ];
 }
