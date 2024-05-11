@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, inputs, lib, ... }:
 
 {
   programs.rofi.theme = "${config.xdg.configHome}/rofi/home-manager.config";
