@@ -1,9 +1,9 @@
 { config, lib, ... }:
 
 {
-  options.nixColorsAdaptersFirefox = {
+  options.nixColorsAdapters.firefox = {
     profile = lib.mkOption {
-      type = types.str;
+      type = lib.types.str;
       example = "johndoe";
       description = ''
         Firefox profile name
