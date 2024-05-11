@@ -2,7 +2,13 @@
 
 {
   options.nixColorsAdapters.firefox = {
-    profile = lib.mkOption { type = lib.types.str; };
+    profile = lib.mkOption {
+      type = types.str;
+      example = "johndoe";
+      description = ''
+        Firefox profile name
+      '';
+    };
   };
 
   config.programs.firefox.profiles.${config.nixColorsAdapters.firefox.profile} =
