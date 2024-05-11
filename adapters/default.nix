@@ -1,1 +1,1 @@
-{ imports = [ ./adwaita.nix ./rofi.nix ./swaylock.nix ./firefox.nix ]; }
+{ imports = [ ./adwaita.nix ./firefox.nix ./rofi.nix ./swaylock.nix ]; }
