@@ -1,6 +1,7 @@
 { config, ... }:
 
 let
+  # https://github.com/vimjoyer
   cssContent = with config.colorScheme.colors; ''
     @define-color accent_color #${base0D};
     @define-color accent_bg_color mix(#${base0D}, #${base00},0.3);
