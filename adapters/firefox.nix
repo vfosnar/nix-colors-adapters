@@ -1,8 +1,8 @@
-{ config, lib, mkDisableOption, ... }:
+{ config, lib, ... }:
 
 {
   options.nixColorsAdapters.firefox = {
-    enable = mkDisableOption "firefox";
+    enable = config.nixColorsAdapters._mkDisableOption "firefox";
     profile = lib.mkOption {
       type = lib.types.str;
       example = "johndoe";

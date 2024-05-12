@@ -1,8 +1,8 @@
-{ config, inputs, lib, mkDisableOption, ... }:
+{ config, inputs, lib, ... }:
 
 {
   options.nixColorsAdapters.rofi = {
-    enable = mkDisableOption "rofi";
+    enable = config.nixColorsAdapters._mkDisableOption "rofi";
   };
 
   config = lib.mkIf config.nixColorsAdapters.rofi.enable {

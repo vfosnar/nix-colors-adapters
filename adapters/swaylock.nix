@@ -1,8 +1,8 @@
-{ config, lib, mkDisableOption, ... }:
+{ config, lib, ... }:
 
 {
   options.nixColorsAdapters.swaylock = {
-    enable = mkDisableOption "swaylock";
+    enable = config.nixColorsAdapters._mkDisableOption "swaylock";
   };
 
   config = lib.mkIf config.nixColorsAdapters.swaylock.enable {

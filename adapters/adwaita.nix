@@ -1,4 +1,4 @@
-{ config, lib, mkDisableOption, ... }:
+{ config, lib, ... }:
 
 let
   # https://github.com/vimjoyer
@@ -90,7 +90,7 @@ let
 in
 {
   options.nixColorsAdapters.adwaita = {
-    enable = mkDisableOption "adwaita";
+    enable = config.nixColorsAdapters._mkDisableOption "adwaita";
   };
 
   config = lib.mkIf config.nixColorsAdapters.adwaita.enable {
