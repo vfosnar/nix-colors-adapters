@@ -31,7 +31,8 @@
 
         userChrome = with config.colorScheme.colors;
           let
-            accentcolor = config.nixColorsAdapters.accent;
+            # Firefox uses accent for tab bar background, actual accent color is inherited from GTK
+            accentcolor = base00;
             textcolor = base04;
             popup = base01;
             popup_text = base04;
@@ -63,8 +64,8 @@
               --toolbar-field-focus-background-color: #${toolbar_field_focus} !important;
               --toolbar-field-focus-color: #${toolbar_field_text_focus} !important;
               --toolbar-field-focus-border-color: transparent !important;
-              --lwt-toolbar-field-highlight: #${toolbar_field_highlight} !important;
-              --lwt-toolbar-field-highlight-text: #${toolbar_field_highlight_text} !important;
+              /*--lwt-toolbar-field-highlight: #${toolbar_field_highlight} !important;
+              --lwt-toolbar-field-highlight-text: #${toolbar_field_highlight_text} !important;*/
             }
           '';
       };
