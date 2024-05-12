@@ -14,6 +14,7 @@ let nixColorsAdaptersLib = import ../lib; in
     ./alacritty.nix
     ./dunst.nix
     ./firefox.nix
+    ./gtk2.nix
     ./rofi.nix
     ./swaylock.nix
   ];
