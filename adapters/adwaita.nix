@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
+  # https://github.com/vimjoyer/nixconf/blob/8bdeb4a3119adda168e6fb489a5e380d8eed91de/homeManagerModules/features/gtk/default.nix
   cssContent = with config.colorScheme.colors; ''
     @define-color accent_color #${config.nixColorsAdapters.accent};
     @define-color accent_bg_color mix(#${config.nixColorsAdapters.accent}, #${base00},0.3);

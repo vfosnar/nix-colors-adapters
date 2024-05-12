@@ -15,6 +15,7 @@ let nixColorsAdaptersLib = import ../lib; in
     ./dunst.nix
     ./firefox.nix
     ./gtk2.nix
+    ./kvantum.nix
     ./rofi.nix
     ./swaylock.nix
     ./wezterm.nix

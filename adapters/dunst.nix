@@ -6,6 +6,7 @@
   };
 
   config = lib.mkIf config.nixColorsAdapters.dunst.enable {
+    # https://github.com/tinted-theming/base16-dunst/blob/0379826aad4fbb6f39305920be232195d3cc80f4/templates/default.mustache
     services.dunst.settings = with config.colorScheme.colors; {
       global = {
         frame_color = "#${base05}";
