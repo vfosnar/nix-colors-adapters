@@ -1,4 +1,4 @@
-{ config, lib, nixColorsAdaptersLib, ... }:
+{ config, lib, ... }:
 
 let nixColorsAdaptersLib = import ../lib; in
 {
