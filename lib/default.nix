@@ -1,5 +1,3 @@
-{ lib, ... }:
-
 {
   getAccentForTheme = colorScheme: colorScheme.colors.base0D;
   # let
