@@ -15,12 +15,14 @@ in
     example = "base08";
     description = "What color to use as an accent color";
   };
-
-  _module.args.mkDisableOption = mkDisableOption;
   imports = [
     ./adwaita.nix
+    { inherit mkDisableOption; }
     ./firefox.nix
+    { inherit mkDisableOption; }
     ./rofi.nix
+    { inherit mkDisableOption; }
     ./swaylock.nix
+    { inherit mkDisableOption; }
   ];
 }
