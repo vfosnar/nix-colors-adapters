@@ -44,8 +44,8 @@
             toolbar_field_focus = base02; # TODO https://searchfox.org/mozilla-central/rev/66ce9f5cbc6578f4fb7b5e0181b6c234ad40d558/toolkit/modules/LightweightThemeConsumer.sys.mjs#113
             toolbar_field_text_focus = base04;
             # toolbar_field_border_focus = ;
-            toolbar_field_highlight = "ff0000"; # TODO https://searchfox.org/mozilla-central/rev/66ce9f5cbc6578f4fb7b5e0181b6c234ad40d558/toolkit/modules/LightweightThemeConsumer.sys.mjs#149
-            toolbar_field_highlight_text = "00ff00";
+            toolbar_field_highlight = config.nixColorsAdapters.accent; # TODO https://searchfox.org/mozilla-central/rev/66ce9f5cbc6578f4fb7b5e0181b6c234ad40d558/toolkit/modules/LightweightThemeConsumer.sys.mjs#149
+            toolbar_field_highlight_text = base04;
           in
           ''
             :root {
