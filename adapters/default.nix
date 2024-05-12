@@ -16,7 +16,7 @@ in
     description = "What color to use as an accent color";
   };
 
-  config.nixColorsAdapters._mkDisableOption = mkDisableOption;
+  options.nixColorsAdapters._mkDisableOption = mkDisableOption;
 
   imports = [
     ./adwaita.nix
