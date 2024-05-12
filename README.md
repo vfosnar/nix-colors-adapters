@@ -44,6 +44,23 @@ To configure `nix-colors` with Gruvbox Dark Hard:
 colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 ```
 
+### Disable adapter
+
+All adapters are enabled by default. To disable an adapter set `nixColorsAdapters.<adapter>.enable = false;`. For example to disable the `rofi` adapter so you can manage its theme manually:
+```
+nixColorsAdapters = {
+    rofi.enable = false;
+};
+```
+
+### Configure Firefox
+For Firefox to work you need to specify a list of profile names. The configuration will only apply on these profiles.
+```
+nixColorsAdapters = {
+    firefox.profiles = [ "alice", "bob" ];
+};
+```
+
 ## Adapters
 
 | Adapter              | Notes                         | Source                                                                                                                                         |
