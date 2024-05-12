@@ -32,7 +32,7 @@
         userChrome = with config.colorScheme.colors;
           let
             # Firefox uses accent for tab bar background, actual accent color is inherited from GTK
-            accentcolor = base00;
+            accentcolor = base08;
             textcolor = base04;
             popup = base01;
             popup_text = base04;
