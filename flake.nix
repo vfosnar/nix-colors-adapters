@@ -5,8 +5,7 @@
 
   outputs = { self, nix-colors }:
     let nixColorsAdaptersLib = import ./lib; in {
-      _module.args.nixColorsAdaptersLib = nixColorsAdaptersLib;
-      homeManagerModules.default = import ./adapters;
+      homeManagerModules.default = import ./adapters { inherit nixColorsAdaptersLib; };
       lib = nixColorsAdaptersLib;
     };
 }
