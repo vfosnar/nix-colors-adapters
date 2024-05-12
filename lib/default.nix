@@ -4,13 +4,13 @@
       dictionary = with colorScheme.colors; {
         "ayu-light" = base0A;
         "ayu-dark" = base0A;
-        "gruvbox-dark-hard" = base08;
-        "gruvbox-dark-medium" = base08;
-        "gruvbox-dark-pale" = base08;
-        "gruvbox-dark-soft" = base08;
-        "gruvbox-light-hard" = base08;
-        "gruvbox-light-medium" = base08;
-        "gruvbox-light-soft" = base08;
+        "gruvbox-dark-hard" = base0C;
+        "gruvbox-dark-medium" = base0C;
+        "gruvbox-dark-pale" = base0C;
+        "gruvbox-dark-soft" = base0C;
+        "gruvbox-light-hard" = base0E;
+        "gruvbox-light-medium" = base0E;
+        "gruvbox-light-soft" = base0E;
       };
     in
     if builtins.hasAttr colorScheme.slug dictionary
