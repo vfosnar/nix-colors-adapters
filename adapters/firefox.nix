@@ -11,12 +11,12 @@
       '';
     };
 
-    assertions = [
-      {
-        assertion = if config.nixColorsAdapters.firefox.enable then config.nixColorsAdapters.adwaita.enable else true;
-        message = "Firefox requires Adwaita to be enabled. Please enable Adwaita.";
-      }
-    ];
+    # assertions = [
+    #   {
+    #     assertion = if config.nixColorsAdapters.firefox.enable then config.nixColorsAdapters.adwaita.enable else true;
+    #     message = "Firefox requires Adwaita to be enabled. Please enable Adwaita.";
+    #   }
+    # ];
   };
 
   config = lib.mkIf config.nixColorsAdapters.firefox.enable {
