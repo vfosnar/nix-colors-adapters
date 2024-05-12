@@ -1,6 +1,7 @@
 { config, inputs, lib, ... }:
 
 let
+  # https://github.com/tinted-theming/base16-rofi/blob/806c5bb7703a24acf551f7ffe9393fe3dd25fd67/templates/default.mustache
   pathToConfig = builtins.toFile "rofi-base16.config" (
     with config.colorScheme.colors;
     let

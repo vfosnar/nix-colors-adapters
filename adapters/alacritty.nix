@@ -6,6 +6,7 @@
   };
 
   config = lib.mkIf config.nixColorsAdapters.alacritty.enable {
+    # https://github.com/aarowill/base16-alacritty/blob/c95c200b3af739708455a03b5d185d3d2d263c6e/templates/default-256.mustache
     programs.alacritty.settings = with config.colorScheme.colors; {
       colors = {
         primary = {
