@@ -6,7 +6,7 @@
   };
 
   config = lib.mkIf config.nixColorsAdapters.dunst.enable {
-    programs.dunst.settings = with config.colorScheme.colors; ''
+    services.dunst.settings = with config.colorScheme.colors; ''
       [global]
       frame_color = "#${base05}"
       separator_color = "#${base05}"
