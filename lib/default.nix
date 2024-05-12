@@ -15,5 +15,5 @@
         "gruvbox-light-soft" = base08;
       };
     in
-    builtins.getAttr colorScheme.slug dictionary base0D;
+    builtins.getAttr colorScheme.slug dictionary or base0D;
 }
