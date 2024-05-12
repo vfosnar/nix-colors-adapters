@@ -23,7 +23,7 @@
     programs.firefox.profiles.${config.nixColorsAdapters.firefox.profile} =
       {
         settings = {
-          "ui.systemUsesDarkTheme" = config.colorScheme.variant;
+          "ui.systemUsesDarkTheme" = config.colorScheme.variant == "dark";
           "browser.theme.toolbar-theme" = if config.colorScheme.variant == "dark" then 0 else 1;
           "browser.theme.content-theme" = if config.colorScheme.variant == "dark" then 0 else 1;
           "layout.css.prefers-color-scheme.content-override" = if config.colorScheme.variant == "dark" then 0 else 1;
