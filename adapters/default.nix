@@ -1,4 +1,4 @@
-{ config, lib, nixColorsAdaptersLib, ... }:
+{ config, lib, ... }:
 
 let
   mkDisableOption = name: lib.mkOption {
@@ -10,7 +10,7 @@ let
 in
 {
   options.nixColorsAdapters.accent = lib.mkOption {
-    default = nixColorsAdaptersLib.getAccentForTheme config.colorScheme.slug;
+    default = config.colorScheme.colors.base0D;
     type = lib.types.string;
     example = "base08";
     description = "What color to use as an accent color";
