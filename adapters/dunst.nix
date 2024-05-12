@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }:
+{ config, lib, ... }:
 
 {
   options.nixColorsAdapters.dunst = {
