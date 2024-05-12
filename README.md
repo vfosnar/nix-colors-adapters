@@ -16,3 +16,4 @@ Collection of adapters for automatically applying [nix-colors](https://github.co
 | GTK2                 |                               | [tinted-theming](https://github.com/dawikur/base16-gtk2/blob/4e43875501dc7c6366296b4393268cb4a8c2d223/templates/schemes.mustache)              |
 | Rofi                 |                               | [tinted-theming](https://github.com/tinted-theming/base16-rofi/blob/806c5bb7703a24acf551f7ffe9393fe3dd25fd67/templates/default.mustache)       |
 | swaylock             |                               |                                                                                                                                                |
+| Wezterm              |                               |                                                                                                                                                |
