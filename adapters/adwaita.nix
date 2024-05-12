@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, mkDisableOption, ... }:
 
 let
   # https://github.com/vimjoyer
@@ -87,7 +87,16 @@ let
     @define-color sidebar_border_color #${base00};
     @define-color sidebar_shade_color rgba(0,0,0,0.36);
   '';
-in {
-  xdg.configFile."gtk-4.0/gtk.css" = { text = cssContent; };
-  xdg.configFile."gtk-3.0/gtk.css" = { text = cssContent; };
+in
+{
+  options.nixColorsAdapters.adwaita = {
+    enable = mkDisableOption "adwaita";
+  };
+
+  config = lib.mkIf config.nixColorsAdapters.adwaita.enable {
+    xdg.configFile = {
+      "gtk-4.0/gtk.css" = { text = cssContent; };
+      "gtk-3.0/gtk.css" = { text = cssContent; };
+    };
+  };
 }
