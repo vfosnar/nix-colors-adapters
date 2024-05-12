@@ -1,9 +1,48 @@
 # ❄️ nix-colors-adapters
 
-Collection of adapters for automatically applying [nix-colors](https://github.com/Misterio77/nix-colors) `base16` color schemes.
+Collection of adapters for automatically applying [nix-colors](https://github.com/Misterio77/nix-colors) `base16` schemes.
 
-## Install
+![Firefox with Gruvbox Dark theme](./images/firefox-gruvbox-dark.png)
 
+A single line change later...
+```diff
+- colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
++ colorScheme = inputs.nix-colors.colorSchemes.ayu-light;
+```
+
+![Firefox with Ayu Light theme](./images/firefox-ayu-light.png)
+
+## Install (system flake + system home-manager)
+
+1. configure home-manager, make sure to pass `inputs` to your home module ([vimjoyer tutorial](https://www.youtube.com/watch?v=FcC2dzecovw))
+2. add `nix-colors` and `nix-colors-adapters` to you `inputs` in `flake.nix`:
+```
+inputs = {
+    ...
+    nix-colors.url = "github:misterio77/nix-colors";
+    nix-colors-adapters.url = "gitlab:vfosnar/nix-colors-adapters";
+    ...
+};
+```
+3. import them in your home module `home.nix`:
+```
+imports = [
+    ...
+    inputs.nix-colors.homeManagerModules.default
+    inputs.nix-colors-adapters.homeManagerModules.default
+    ...
+];
+```
+4. you're done!
+
+## Configuration (home.nix)
+
+You can configure any `base16` theme using [nix-colors](https://github.com/Misterio77/nix-colors).
+
+To configure `nix-colors` with Gruvbox Dark Hard:
+```nix
+colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+```
 
 ## Adapters
 

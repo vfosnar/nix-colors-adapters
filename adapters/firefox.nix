@@ -3,11 +3,11 @@
 {
   options.nixColorsAdapters.firefox = {
     enable = lib.mkEnableOption "firefox" // { default = true; };
-    profile = lib.mkOption {
-      type = lib.types.str;
-      example = "johndoe";
+    profiles = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      example = [ "johndoe" ];
       description = ''
-        Firefox profile name
+        Firefox profiles
       '';
     };
   };
@@ -24,8 +24,8 @@
       }
     ];
 
-    programs.firefox.profiles.${config.nixColorsAdapters.firefox.profile} =
-      {
+    programs.firefox.profiles =
+      builtins.list config.nixColorsAdapters.firefox.profiles (name: {
         settings = {
           "ui.systemUsesDarkTheme" = config.colorScheme.variant == "dark";
           "browser.theme.toolbar-theme" = if config.colorScheme.variant == "dark" then 0 else 1;
@@ -72,6 +72,6 @@
               --lwt-toolbar-field-highlight-text: #${toolbar_field_highlight_text} !important;*/
             }
           '';
-      };
+      });
   };
 }
