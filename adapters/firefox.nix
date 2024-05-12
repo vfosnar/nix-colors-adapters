@@ -18,6 +18,10 @@
         assertion = if config.nixColorsAdapters.firefox.enable then config.nixColorsAdapters.adwaita.enable else true;
         message = "Firefox requires Adwaita to be enabled. Please enable Adwaita.";
       }
+      {
+        assertion = if config.nixColorsAdapters.firefox.enable then config.gtk.enable else true;
+        message = "Firefox requires GTK theming to be enabled. Please enable GTK theming with `gtk.enable = true;`.";
+      }
     ];
 
     programs.firefox.profiles.${config.nixColorsAdapters.firefox.profile} =
@@ -31,8 +35,8 @@
 
         userChrome = with config.colorScheme.colors;
           let
-            # Firefox uses accent for tab bar background, actual accent color is inherited from GTK
-            accentcolor = base08;
+            # Firefox uses accent for tab bar background, actual accent color is inherited from GTK3
+            accentcolor = base00;
             textcolor = base04;
             popup = base01;
             popup_text = base04;
