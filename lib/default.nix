@@ -1,9 +1,9 @@
 { lib, ... }:
 
 {
-  getAccentForTheme = colorScheme: with colorScheme.colors;
+  getAccentForTheme = colorScheme:
     let
-      dictionary = {
+      dictionary = with colorScheme.colors; {
         "ayu-light" = base0A;
         "ayu-dark" = base0A;
         "gruvbox-dark-hard" = base08;
@@ -15,5 +15,7 @@
         "gruvbox-light-soft" = base08;
       };
     in
-    builtins.getAttr colorScheme.slug dictionary or base0D;
+    if builtins.hasAttr colorScheme.slug dictionary
+    then (builtins.getAttr colorScheme.slug dictionary)
+    else colorScheme.colors.base0D;
 }
