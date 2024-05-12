@@ -25,8 +25,8 @@
     ];
 
     programs.firefox.profiles =
-      builtins.list config.nixColorsAdapters.firefox.profiles (name: {
-        settings = {
+      lib.lists.forEach config.nixColorsAdapters.firefox.profiles (profile: {
+        ${profile}.settings = {
           "ui.systemUsesDarkTheme" = config.colorScheme.variant == "dark";
           "browser.theme.toolbar-theme" = if config.colorScheme.variant == "dark" then 0 else 1;
           "browser.theme.content-theme" = if config.colorScheme.variant == "dark" then 0 else 1;
