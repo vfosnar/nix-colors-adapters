@@ -1,7 +1,6 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 let
-  # https://github.com/vimjoyer
   cssContent = with config.colorScheme.colors; ''
     @define-color accent_color #${config.nixColorsAdapters.accent};
     @define-color accent_bg_color mix(#${config.nixColorsAdapters.accent}, #${base00},0.3);
@@ -94,6 +93,11 @@ in
   };
 
   config = lib.mkIf config.nixColorsAdapters.adwaita.enable {
+    gtk = {
+      theme.package = pkgs.adw-gtk3;
+      theme.name = "adw-gtk3";
+    };
+
     xdg.configFile = {
       "gtk-4.0/gtk.css" = { text = cssContent; };
       "gtk-3.0/gtk.css" = { text = cssContent; };

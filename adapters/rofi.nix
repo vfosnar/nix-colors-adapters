@@ -8,7 +8,6 @@
   config = lib.mkIf config.nixColorsAdapters.rofi.enable {
     programs.rofi.theme = "${config.xdg.configHome}/rofi/home-manager.config";
 
-    # https://github.com/tinted-theming
     home.file."${config.xdg.configHome}/rofi/home-manager.config".text =
       with config.colorScheme.colors;
       let

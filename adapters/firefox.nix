@@ -22,7 +22,6 @@
 
     programs.firefox.profiles.${config.nixColorsAdapters.firefox.profile} =
       {
-        # https://searchfox.org/mozilla-central/rev/66ce9f5cbc6578f4fb7b5e0181b6c234ad40d558/toolkit/modules/LightweightThemeConsumer.sys.mjs
         settings = {
           "ui.systemUsesDarkTheme" = config.colorScheme.variant;
           "browser.theme.toolbar-theme" = if config.colorScheme.variant == "dark" then 0 else 1;
