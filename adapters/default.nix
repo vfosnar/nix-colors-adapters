@@ -1,8 +1,8 @@
-{ config, lib, ... }:
+{ config, lib, nixColorsAdaptersLib, ... }:
 
 {
   options.nixColorsAdapters.accent = lib.mkOption {
-    default = config.colorScheme.colors.base0D;
+    default = nixColorsAdaptersLib.getAccentForTheme config.colorScheme;
     type = lib.types.string;
     example = "base08";
     description = "What color to use as an accent color";
