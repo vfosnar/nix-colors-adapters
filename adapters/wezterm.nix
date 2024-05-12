@@ -6,6 +6,9 @@ in
 {
   options.nixColorsAdapters.wezterm = {
     enable = lib.mkEnableOption "wezterm" // { default = true; };
+    base16-file = lib.mkOption {
+      type = lib.types.path;
+    };
   };
 
   config = lib.mkIf config.nixColorsAdapters.wezterm.enable {
