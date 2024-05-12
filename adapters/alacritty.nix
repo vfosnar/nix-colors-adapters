@@ -6,7 +6,7 @@
   };
 
   config = lib.mkIf config.nixColorsAdapters.alacritty.enable {
-    programs.settings.theme = with config.colorScheme.colors; ''
+    programs.alacritty.settings = with config.colorScheme.colors; ''
       # Default colors
       [colors.primary]
       background = '0x${base00}'

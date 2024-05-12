@@ -12,6 +12,7 @@ let nixColorsAdaptersLib = import ../lib; in
   imports = [
     ./adwaita.nix
     ./alacritty.nix
+    ./dunst.nix
     ./firefox.nix
     ./rofi.nix
     ./swaylock.nix
