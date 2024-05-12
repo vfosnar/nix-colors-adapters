@@ -15,11 +15,11 @@
   config = lib.mkIf config.nixColorsAdapters.firefox.enable {
     assertions = [
       {
-        assertion = if config.nixColorsAdapters.firefox.enable then config.nixColorsAdapters.adwaita.enable else true;
+        assertion = config.nixColorsAdapters.adwaita.enable;
         message = "Firefox requires Adwaita to be enabled. Please enable Adwaita.";
       }
       {
-        assertion = if config.nixColorsAdapters.firefox.enable then config.gtk.enable else true;
+        assertion = config.gtk.enable;
         message = "Firefox requires GTK theming to be enabled. Please enable GTK theming with `gtk.enable = true;`.";
       }
     ];
