@@ -10,7 +10,7 @@ in
 
   config = lib.mkIf config.nixColorsAdapters.wezterm.enable {
     nixColorsAdapters.wezterm.base16-file = pathToScheme;
-    file.${pathToScheme} = {
+    home.file.${pathToScheme} = {
       text = inputs.nix-colors.lib.schemeToYAML config.colorScheme;
     };
   };
