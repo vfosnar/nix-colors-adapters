@@ -1,5 +1,6 @@
 { config, lib, nixColorsAdaptersLib, ... }:
 
+let nixColorsAdaptersLib = import ../lib; in
 {
   options.nixColorsAdapters.accent = lib.mkOption {
     default = nixColorsAdaptersLib.getAccentForTheme config.colorScheme;
