@@ -3,8 +3,8 @@
 let
   # https://github.com/vimjoyer
   cssContent = with config.colorScheme.colors; ''
-    @define-color accent_color #${base0D};
-    @define-color accent_bg_color mix(#${base0D}, #${base00},0.3);
+    @define-color accent_color #${config.nixColorsAdapters.accent};
+    @define-color accent_bg_color mix(#${config.nixColorsAdapters.accent}, #${base00},0.3);
     @define-color accent_fg_color #${base00};
     @define-color destructive_color #${base0C};
     @define-color destructive_bg_color mix(#${base0C}, #${base00},0.3);
