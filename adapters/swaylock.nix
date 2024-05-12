@@ -2,7 +2,7 @@
 
 {
   options.nixColorsAdapters.swaylock = {
-    enable = config.nixColorsAdapters._mkDisableOption "swaylock";
+    enable = lib.mkEnableOption "swaylock" // { default = true; };
   };
 
   config = lib.mkIf config.nixColorsAdapters.swaylock.enable {

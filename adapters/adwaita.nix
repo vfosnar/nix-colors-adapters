@@ -90,7 +90,7 @@ let
 in
 {
   options.nixColorsAdapters.adwaita = {
-    enable = config.nixColorsAdapters._mkDisableOption "adwaita";
+    enable = lib.mkEnableOption "adwaita" // { default = true; };
   };
 
   config = lib.mkIf config.nixColorsAdapters.adwaita.enable {

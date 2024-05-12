@@ -2,7 +2,7 @@
 
 {
   options.nixColorsAdapters.firefox = {
-    enable = config.nixColorsAdapters._mkDisableOption "firefox";
+    enable = lib.mkEnableOption "firefox" // { default = true; };
     profile = lib.mkOption {
       type = lib.types.str;
       example = "johndoe";

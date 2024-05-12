@@ -2,7 +2,7 @@
 
 {
   options.nixColorsAdapters.rofi = {
-    enable = config.nixColorsAdapters._mkDisableOption "rofi";
+    enable = lib.mkEnableOption "rofi" // { default = true; };
   };
 
   config = lib.mkIf config.nixColorsAdapters.rofi.enable {
