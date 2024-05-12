@@ -10,16 +10,16 @@
         Firefox profile name
       '';
     };
-
-    # assertions = [
-    #   {
-    #     assertion = if config.nixColorsAdapters.firefox.enable then config.nixColorsAdapters.adwaita.enable else true;
-    #     message = "Firefox requires Adwaita to be enabled. Please enable Adwaita.";
-    #   }
-    # ];
   };
 
   config = lib.mkIf config.nixColorsAdapters.firefox.enable {
+    assertions = [
+      {
+        assertion = if config.nixColorsAdapters.firefox.enable then config.nixColorsAdapters.adwaita.enable else true;
+        message = "Firefox requires Adwaita to be enabled. Please enable Adwaita.";
+      }
+    ];
+
     programs.firefox.profiles.${config.nixColorsAdapters.firefox.profile} =
       {
         # https://searchfox.org/mozilla-central/rev/66ce9f5cbc6578f4fb7b5e0181b6c234ad40d558/toolkit/modules/LightweightThemeConsumer.sys.mjs
