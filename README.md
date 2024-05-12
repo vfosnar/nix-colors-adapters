@@ -61,6 +61,27 @@ nixColorsAdapters = {
 };
 ```
 
+### Configure Wezterm
+Themes for Wezterm cannot be applied automatically so you have to run the following in your wezterm.lua:
+```lua
+config.colors = wezterm.color.load_base16_scheme("${config.nixColorsAdapters.wezterm.base16-file}");
+```
+or if configuring Wezterm outside of home manager
+```lua
+config.colors = wezterm.color.load_base16_scheme(" ~/.config/wezterm/nix-colors-adapters-base16.yaml");
+```
+
+## Accent color
+The accent color for selected theme is automatically selected for known themes ([source](./lib/default.nix)). If you want to override the color and provide your own just set `nixColorsAdapters.accent`. Example:
+
+```
+nixColorsAdapters = {
+    accent = "ff0000";
+    # or
+    accent = config.colorScheme.colors.base08;
+};
+```
+
 ## Adapters
 
 | Adapter              | Notes                         | Source                                                                                                                                         |
