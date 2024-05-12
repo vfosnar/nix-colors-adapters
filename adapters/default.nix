@@ -17,5 +17,6 @@ let nixColorsAdaptersLib = import ../lib; in
     ./gtk2.nix
     ./rofi.nix
     ./swaylock.nix
+    ./wezterm.nix
   ];
 }
