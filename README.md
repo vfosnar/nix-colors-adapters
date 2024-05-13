@@ -68,15 +68,15 @@ colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
 ### Enable/disable adapter
 
-All adapters are enabled by default. To disable an adapter set `nixColorsAdapters.<adapter>.enable = false;`. For example to disable the `rofi` adapter so you can manage its theme manually:
+All adapters are enabled by default. To disable an adapter set `nixColorsAdapters.<adapter>.enable = false;`. For example to disable the `kvantum` adapter so you can manage its theme manually:
 ```
 nixColorsAdapters = {
-    rofi.enable = false;
+    kvantum.enable = false;
 };
 ```
 
 ### Configure Firefox
-For Firefox to work you need to specify a list of profile names. The configuration will only apply on these profiles.
+For Firefox to work you need to specify a list of profile names. The configuration will only apply to these profiles. To properly apply colors the `System theme — auto` theme must be manually set in Firefox settings.
 ```
 nixColorsAdapters = {
     firefox.profiles = [ "alice", "bob" ];
@@ -87,10 +87,13 @@ nixColorsAdapters = {
 Themes for Wezterm cannot be applied automatically so you have to run the following in your wezterm.lua:
 ```lua
 config.colors = wezterm.color.load_base16_scheme("${config.nixColorsAdapters.wezterm.base16-file}");
+return config;
 ```
 or if configuring Wezterm outside of home manager
 ```lua
+local wezterm = require 'wezterm';
 config.colors = wezterm.color.load_base16_scheme(" ~/.config/wezterm/nix-colors-adapters-base16.yaml");
+return config;
 ```
 
 ## Accent color
