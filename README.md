@@ -5,10 +5,10 @@
 Collection of adapters for automatically applying [nix-colors](https://github.com/Misterio77/nix-colors) `base16` schemes.
 
 Firefox:
-![Tow Firefox windows, one with Gruvbox Dark and second with Ayu Light theme](./assets/firefox.png)
+![Two Firefox windows, one with Gruvbox Dark and second with Ayu Light theme](./assets/firefox.png)
 
 Dolphin (Kvantum):
-![Tow Dolphin windows, one with Gruvbox Dark and second with Ayu Light theme](./assets/dolphin.png)
+![Two Dolphin windows, one with Gruvbox Dark and second with Ayu Light theme](./assets/dolphin.png)
 
 Code for this example:
 
