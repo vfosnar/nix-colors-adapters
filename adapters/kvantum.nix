@@ -7,6 +7,7 @@
 
   config = lib.mkIf config.nixColorsAdapters.kvantum.enable {
     qt = {
+      enable = true;
       platformTheme = "kde";
       style.name = "kvantum";
     };

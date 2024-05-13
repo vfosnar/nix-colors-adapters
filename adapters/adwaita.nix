@@ -87,6 +87,7 @@ let
     @define-color sidebar_border_color #${base00};
     @define-color sidebar_shade_color rgba(0,0,0,0.36);
   '';
+  preferDarkTheme = if config.colorScheme.variant == "dark" then 1 else 0;
 in
 {
   options.nixColorsAdapters.adwaita = {
@@ -95,8 +96,12 @@ in
 
   config = lib.mkIf config.nixColorsAdapters.adwaita.enable {
     gtk = {
+      enable = true;
       theme.package = pkgs.adw-gtk3;
       theme.name = "adw-gtk3";
+
+      gtk3.extraConfig = { gtk-application-prefer-dark-theme = preferDarkTheme; };
+      gtk4.extraConfig = { gtk-application-prefer-dark-theme = preferDarkTheme; };
     };
 
     xdg.configFile = {
