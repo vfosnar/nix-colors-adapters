@@ -2,7 +2,7 @@
   getAccentForTheme = colorScheme:
     let
       dictionary = with colorScheme.colors; {
-        "ayu-light" = base0A;
+        "ayu-light" = base09;
         "ayu-dark" = base0A;
         "gruvbox-dark-hard" = base0C;
         "gruvbox-dark-medium" = base0C;

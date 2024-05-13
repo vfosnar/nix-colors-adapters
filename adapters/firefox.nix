@@ -74,6 +74,48 @@
               --lwt-toolbar-field-highlight-text: #${toolbar_field_highlight_text} !important;*/
             }
           '';
+
+        userContent = with config.colorScheme.colors; ''
+          @-moz-document url("about:newtab") {
+            :root {
+              --newtab-text-primary-color: #${base04} !important;
+              --newtab-background-color: #${base00} !important;
+              --newtab-background-color-secondary: #${base02} !important;
+            }
+          }
+
+          @-moz-document url-prefix(about:) {
+            :root {
+              /* global */
+              --in-content-accent-color: #${config.nixColorsAdapters.accent} !important;
+              --color-accent-primary-hover: color-mix(in srgb, #${config.nixColorsAdapters.accent}, #777777 50%) !important;
+
+              /* body */
+              --in-content-page-color: #${base04} !important;
+              --in-content-page-background: #${base00} !important;
+
+              /* button */
+              --in-content-button-background: #${base02} !important;
+              --in-content-button-background-hover: color-mix(in srgb, #${base02}, #777777 20%) !important;
+            
+              --in-content-primary-button-text-color: #${base00} !important;
+              --in-content-primary-button-background: #${config.nixColorsAdapters.accent} !important;
+              --in-content-primary-button-background-hover: color-mix(in srgb, #${config.nixColorsAdapters.accent}, #777777 50%) !important;
+              --in-content-primary-button-background-active: color-mix(in srgb, #${config.nixColorsAdapters.accent}, #777777 50%) !important;
+              --in-content-primary-button-border-hover: transparent;
+
+              /* links */
+              --link-color: #${config.nixColorsAdapters.accent} !important;
+
+              /* inputs */
+              --focus-outline-color: #${config.nixColorsAdapters.accent} !important;
+            
+              /* box */
+              --box-background-color: #${base01} !important;
+              --in-content-box-info-background: #${base02} !important;
+            }
+          }
+        '';
       };
     }));
   };
